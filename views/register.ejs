@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include('lo_reg_header.ejs'); %>
+        <title>Register</title>
+</head>
+
+<body>
+    <div class="fullscreen container m-auto">
+        <div class="row h-100 justify-content-center align-items-center">
+            <div class="col-xlg-4 col-lg-6 col-md-8">
+                <h1 class="text-center mb-4">Register</h1>
+                <div class="w-100 d-flex justify-content-center align-items-center">
+                    <hr class="w-100">
+                    <img class="login-img" src="images/user.png" alt="userimg" srcset="">
+                    <hr class="w-100">
+                </div>
+                <form id="register-form" class="form-data w-100 h-100" action="" method="post">
+                    <div class="w-100 h-100 input-group mb-3">
+                        <span class="input-group-text" id="basic-addon1"><img class="w-100 h-100" src="images/user2.png"
+                                alt="" srcset=""></span>
+                        <input id="username" type="text" name="username" 
+                            class="form-control" placeholder="Username" aria-label="Username">
+                    </div>
+                    <div class="w-100 h-100 input-group mb-3">
+                        <span class="input-group-text" id="basic-addon1"><img class="w-100 h-100" src="images/email.png"
+                                alt="" srcset=""></span>
+                        <input id="email" type="text" name="email" class="form-control" placeholder="Email"
+                            aria-label="Email" aria-describedby="Email">
+                    </div>
+                    <div class="w-100 h-100 input-group mb-3">
+                        <span class="input-group-text" id="basic-addon1"><img class="w-100 h-100" src="images/lock.png"
+                                alt="" srcset=""></span>
+                        <input id="password" type="password" name="password" class="form-control" placeholder="Password"
+                            oninput="" aria-label="Password" autocomplete="on">
+                    </div>
+                    <div class="w-100 h-100 input-group mb-4">
+                        <span class="input-group-text" id="basic-addon1"><img class="w-100 h-100" src="images/lock.png"
+                                alt="" srcset=""></span>
+                        <input id="confirm-password" type="password" name="password2" class="form-control"
+                            placeholder="Confirm Password" aria-label="Confirm Password" autocomplete="on">
+                    </div>
+                    <div class="w-100 h-100 input-group mb-3">
+                        <button class="w-100 btn btn-danger" type="submit" id="button-addon1">Register</button>
+                    </div>
+                    <h6 id="error-msg" class="text-warning text-center mb-4"></h6>
+                </form>
+                <div class="w-100 d-flex justify-content-center  mb-3">
+                    <a class="nav-link link text-nowrap" href="/">You Have an Account? Login Now!</a>
+                </div>
+                <hr>
+            </div>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.6.3.js"
+        integrity="sha256-nQLuAZGRRcILA+6dMBOvcRh5Pe310sBpanc6+QBmyVM=" crossorigin="anonymous"></script>
+    <!--BootStrap 5 javaScript-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
+        crossorigin="anonymous"></script>
+    <script src="js/register.js"></script>
+</body>
+
+</html>

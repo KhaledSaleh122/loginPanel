@@ -1,0 +1,59 @@
+body, html{
+    margin: 0;
+    color: white;
+    height: 100%;
+    background: url('../images/background.jpg') no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    height: 100vh;
+    width: 100vw;
+}
+
+
+hr{
+    color: white !important;
+    border : solid;
+    border-top: thick;
+    margin: 0;
+}
+
+.fullscreen{
+    height: 100vh;
+    width: 100vw;
+    margin: 0;
+}
+
+.login-img{
+    border: solid thin;
+    border-radius: 50%;
+    padding: 0.5rem;
+
+}
+
+.form-data{
+    margin-top: calc(6.5vh);
+}
+.input-group-text{
+    width: 3rem;
+    background-color: inherit;
+    padding-left: 6px;
+    padding-right: 6px;
+}
+.input-group-text,.form-control{
+    height: 3rem;
+}
+#button-addon1{
+    height: 3rem;
+    font-family: 'Unbounded', cursive;
+    font-size: 1.3rem;
+}
+.link{
+    color: white !important;
+}
+
+
+#error-msg{
+    height: 1.5rem;
+}
