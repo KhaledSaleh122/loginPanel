@@ -64,29 +64,24 @@ app.route("/").get((req, res) => {
 }).post((req, res) => {
     const isValid = validateInfo_login(req.body)
     if (isValid) {
-        const user = new User(
-            {
-                username: req.body.name,
-                password: req.body.password
-            });
-        req.login(user,function(err){
-            if(err){
-                res.send([{ err: "Username or password is wrong" }]);
-            }else{
-                const authenticate = User.authenticate();
-                authenticate(req.body.name, req.body.password, function (err, result) {
-                    if (err) {
-                        res.send([{ err: "Error while loggin into your account, try later" }]);
+        const user = new User({username: req.body.name, password: req.body.password});
+            const authenticate = User.authenticate();
+            authenticate(req.body.name, req.body.password, function (err, result) {
+                console.log(err,result);
+                if (err) {
+                    res.send([{ err: "Error while loggin into your account, try later" }]);
+                } else {
+                    if (result) {
+                        req.login(user, function (err) {
+                            if (!err) {
+                                res.send([{ err: "" }]);
+                            }
+                        })
                     } else {
-                        if (result) {
-                            res.send([{ err: "" }]);
-                        } else {
-                            res.send([{ err: "Username or password is wrong" }]);
-                        }
+                        res.send([{ err: "Username or password is wrong" }]);
                     }
-                });
-            }
-        })
+                }
+            });
 
     } else {
         res.send([{ err: "Error while logging into your account, try later _" }]);
@@ -111,9 +106,9 @@ app.route('/logout').get((req,res)=>{
 
 app.route('/home').get((req, res) => {
     if (req.isAuthenticated()) {
-        res.send("farooq gay is auth");
+        
     } else {
-        res.send('farooq gay is not auth');
+        res.redirect('/');
     }
 })
 
